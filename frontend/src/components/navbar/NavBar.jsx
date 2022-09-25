@@ -15,7 +15,7 @@ const NavBar = () => {
     <Fragment>
       <Navbar>
         <NavBarContainer>
-          <LogoContainer>Booking</LogoContainer>
+          <LogoContainer>AK-BOOKING</LogoContainer>
           <NavBarLinksContainer>
             <NavBarLink>
               <FaSignInAlt /> Login

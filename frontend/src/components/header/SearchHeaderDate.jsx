@@ -12,7 +12,7 @@ import {
 } from './header.styles';
 import { FaCalendarDay } from 'react-icons/fa';
 
-const SearchHeaderDate = () => {
+const SearchHeaderDate = ({ onSearch }) => {
   const [isOpenDate, setIsOpenDate] = useState(false);
   const [date, setDate] = useState([
     {
@@ -21,6 +21,8 @@ const SearchHeaderDate = () => {
       key: 'selection',
     },
   ]);
+  onSearch(date);
+
   return (
     <Fragment>
       <HeaderSearchItem>
@@ -30,7 +32,7 @@ const SearchHeaderDate = () => {
           {`${format(date[0].endDate, 'MM/dd/yyyy')}`}
         </HeaderSearchText>
         {isOpenDate && (
-          <HeaderSearchDate>
+          <HeaderSearchDate onMouseLeave={() => setIsOpenDate(false)}>
             <DateRange
               editableDateInputs={true}
               onChange={item => setDate([item.selection])}

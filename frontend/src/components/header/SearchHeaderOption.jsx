@@ -12,13 +12,14 @@ import {
   OptionCounter,
 } from './header.styles';
 
-const SearchHeaderOption = () => {
+const SearchHeaderOption = ({ onSearch }) => {
   const [isOptionOpen, setIsOptionOpen] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
     room: 1,
   });
+  onSearch(options);
 
   const optionHandler = (name, operation) => {
     setOptions(prev => {
@@ -30,11 +31,17 @@ const SearchHeaderOption = () => {
   };
   return (
     <Fragment>
-      <HeaderSearchItem onClick={() => setIsOptionOpen(!isOptionOpen)}>
+      <HeaderSearchItem>
         <FaPersonBooth style={{ color: 'lightgray' }} />
-        <HeaderSearchText>{`${options.adult} adults . ${options.children} children . ${options.room} room`}</HeaderSearchText>
+        <HeaderSearchText
+          onClick={() => setIsOptionOpen(!isOptionOpen)}
+        >{`${options.adult} adults . ${options.children} children . ${options.room} room`}</HeaderSearchText>
         {isOptionOpen && (
-          <Options>
+          <Options
+            onMouseLeave={() => {
+              setIsOptionOpen(false);
+            }}
+          >
             <OptionItem>
               <OptionText>Adult</OptionText>
               <OptionCounter>

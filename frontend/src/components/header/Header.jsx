@@ -16,7 +16,7 @@ const Header = () => {
           <HeaderTitle>A lifetime of discounts ? It's Genius.</HeaderTitle>
           <HeaderDesc>
             Get rewarded for your travel - Unlock instant saving of 10% or more
-            with a free Akbooking account
+            with a free AK-booking account
           </HeaderDesc>
           <HeaderButton>Sign In/Register</HeaderButton>
           {/* Search component */}
