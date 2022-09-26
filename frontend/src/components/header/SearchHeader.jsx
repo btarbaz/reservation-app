@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 import { FaBed } from 'react-icons/fa';
 
 import {
@@ -22,8 +22,10 @@ const SearchHeader = () => {
     date: {},
     options: {},
   };
+  const navigate = useNavigate();
   const onSearchHandler = () => {
     console.log(searchState);
+    navigate('/hotels', { state: searchState });
   };
   return (
     <Fragment>

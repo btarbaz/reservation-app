@@ -37,6 +37,7 @@ const SearchHeaderDate = ({ onSearch }) => {
               editableDateInputs={true}
               onChange={item => setDate([item.selection])}
               moveRangeOnFirstSelection={false}
+              minDate={new Date()}
               ranges={date}
             />
           </HeaderSearchDate>

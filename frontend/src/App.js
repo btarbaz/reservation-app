@@ -12,7 +12,7 @@ function App() {
         <Route path="/" element={<NavBar />}>
           <Route index element={<Home />} />
           <Route path="/hotels" element={<Hotels />} />
-          <Route path="/hotels/:id" element={<Hotel />} />
+          <Route path="/hotel/:id" element={<Hotel />} />
         </Route>
       </Routes>
     </BrowserRouter>
